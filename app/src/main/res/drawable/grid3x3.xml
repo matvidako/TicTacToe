@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:bottom="@dimen/size_cell" android:drawable="@drawable/horizontal_line"/>
+    <item android:top="@dimen/size_cell" android:drawable="@drawable/horizontal_line"/>
+    <item android:left="@dimen/size_cell_minus" android:drawable="@drawable/vertical_line"/>
+    <item android:right="@dimen/size_cell_minus" android:drawable="@drawable/vertical_line"/>
+</layer-list>

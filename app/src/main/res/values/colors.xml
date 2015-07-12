@@ -1,0 +1,7 @@
+<resources>
+
+    <color name="grid_line">@color/background_material_dark</color>
+    <color name="icon_o_color">@color/accent_material_dark</color>
+    <color name="icon_x_color">@color/accent_material_light</color>
+
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="GridCell">
+        <item name="android:layout_height">@dimen/size_cell</item>
+        <item name="android:layout_width">@dimen/size_cell</item>
+        <item name="android:padding">@dimen/padding_icon</item>
+    </style>
+</resources>
