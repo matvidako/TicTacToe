@@ -1,19 +1,16 @@
 package hr.matvidako.tictactoe;
 
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.support.v7.widget.GridLayout;
 
-import butterknife.BindDrawable;
-import butterknife.OnClick;
-
-public class MainActivity extends Activity {
+public class GameActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new Grid((GridLayout) findViewById(R.id.grid), new Game());
     }
 
 }
