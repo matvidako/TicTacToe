@@ -5,6 +5,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dim_foreground_material_dark"
+        android:padding="@dimen/padding_standard">
+
+        <ImageView
+            android:id="@+id/scoreIconCross"
+            android:layout_width="@dimen/size_score_icon"
+            android:layout_height="@dimen/size_score_icon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/cross" />
+
+        <TextView
+            android:id="@+id/scoreCross"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/scoreIconCross"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:text="0" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/score" />
+
+        <ImageView
+            android:id="@+id/scoreIconCircle"
+            android:layout_width="@dimen/size_score_icon"
+            android:layout_height="@dimen/size_score_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/circle" />
+
+        <TextView
+            android:id="@+id/scoreCircle"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/scoreIconCircle"
+            android:layout_marginRight="@dimen/padding_large"
+            android:text="0" />
+    </RelativeLayout>
+
     <android.support.v7.widget.GridLayout
         android:id="@+id/grid"
         android:layout_width="wrap_content"

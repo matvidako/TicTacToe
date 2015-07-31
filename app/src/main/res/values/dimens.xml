@@ -5,4 +5,8 @@
     <dimen name="size_cell_minus">-64dp</dimen>
     <dimen name="size_icon">52dp</dimen>
     <dimen name="padding_icon">8dp</dimen>
+    <dimen name="padding_standard">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="size_score_icon">24dp</dimen>
 </resources>
