@@ -9,19 +9,19 @@ import butterknife.OnClick;
 
 public class GameActivity extends Activity {
 
-    Grid grid;
+    Board board;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        grid = new Grid((GridLayout) findViewById(R.id.grid), new Game());
+        board = new Board((GridLayout) findViewById(R.id.grid), new Game());
         ButterKnife.bind(this);
     }
 
     @OnClick(R.id.clear)
     public void clearGrid() {
-        grid.clear();
+        board.clear();
     }
 
 }

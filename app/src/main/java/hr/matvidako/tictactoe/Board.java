@@ -6,12 +6,12 @@ import android.view.View;
 import java.util.Iterator;
 import java.util.List;
 
-public class Grid implements View.OnClickListener, Iterable<Cell> {
+public class Board implements View.OnClickListener, Iterable<Cell> {
 
     Game game;
     GridLayout gridLayout;
 
-    public Grid(GridLayout gridLayout, Game game) {
+    public Board(GridLayout gridLayout, Game game) {
         this.game = game;
         this.gridLayout = gridLayout;
 
