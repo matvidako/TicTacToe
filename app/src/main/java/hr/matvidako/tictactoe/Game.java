@@ -16,4 +16,8 @@ public class Game {
         }
     }
 
+    public boolean isGameOver(Grid grid) {
+        return false;
+    }
+
 }

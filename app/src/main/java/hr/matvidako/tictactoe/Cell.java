@@ -10,6 +10,7 @@ import butterknife.ButterKnife;
 
 public class Cell extends ImageView {
 
+    private Player occupiedBy = Player.NONE;
 
     public Cell(Context context) {
         this(context, null, 0);
@@ -24,10 +25,23 @@ public class Cell extends ImageView {
         ButterKnife.bind(this);
     }
 
-    public void setIcon(int iconDrawableResId) {
-        setImageResource(iconDrawableResId);
+    public void occupy(Player player) {
+        occupiedBy = player;
+        setImageResource(player.iconDrawable);
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(this, View.ALPHA, 0, 1);
         fadeIn.start();
     }
 
+    public Player getOccupiedBy() {
+        return occupiedBy;
+    }
+
+    public void clear() {
+        occupiedBy = Player.NONE;
+        setImageResource(0);
+    }
+
+    public boolean isEmpty() {
+        return occupiedBy == Player.NONE;
+    }
 }
