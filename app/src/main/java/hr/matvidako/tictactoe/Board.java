@@ -4,69 +4,58 @@ import android.support.v7.widget.GridLayout;
 import android.view.View;
 
 import java.util.Iterator;
-import java.util.List;
 
-public class Board implements View.OnClickListener, Iterable<Cell> {
+public class Board implements View.OnClickListener {
 
-    Game game;
-    GridLayout gridLayout;
+    private Rules rules;
+    private Player currentPlayer;
 
-    public Board(GridLayout gridLayout, Game game) {
-        this.game = game;
-        this.gridLayout = gridLayout;
+    private int size = 3;
+    private int cellCount = size * size;
+    private int moveCount = 0;
+    private Cell[][] cells = new Cell[size][size];
 
-        for(Cell cell : this) {
-            cell.setOnClickListener(this);
+    public Board(GridLayout gridLayout, Rules rules) {
+        this.rules = rules;
+        this.currentPlayer = rules.getStartingPlayer();
+        this.cellCount = gridLayout.getChildCount();
+
+        int childIndex = 0;
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                Cell cell = (Cell) gridLayout.getChildAt(childIndex);
+                cells[row][col] = cell;
+                cell.setOnClickListener(this);
+                childIndex++;
+            }
         }
     }
 
     public void clear() {
-        for(Cell cell : this) {
-            cell.clear();
+        moveCount = 0;
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                cells[row][col].clear();
+            }
         }
+    }
+
+    public boolean isFull() {
+        return moveCount >= cellCount;
     }
 
     @Override
     public void onClick(View v) {
         Cell cell = (Cell) v;
-        if(cell.isEmpty()) {
-            cell.occupy(game.getCurrentPlayer());
-            game.onTurnEnd();
+        if (cell.isEmpty()) {
+            cell.occupy(currentPlayer);
+            moveCount++;
+            currentPlayer = rules.getNextPlayer(currentPlayer);
         }
-        if(game.isGameOver(this)) {
+        if (rules.getWinner(this) != Player.NONE) {
             clear();
-        }
-    }
-
-    @Override
-    public Iterator<Cell> iterator() {
-        return new CellIterator();
-    }
-
-    private class CellIterator implements Iterator<Cell> {
-
-        private int currentIndex = 0;
-        private int size;
-
-        public CellIterator() {
-            size = gridLayout.getChildCount();
-        }
-
-        @Override
-        public boolean hasNext() {
-            return currentIndex < size;
-        }
-
-        @Override
-        public Cell next() {
-            Cell cell = (Cell) gridLayout.getChildAt(currentIndex);
-            currentIndex++;
-            return cell;
-        }
-
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException("");
+        } else if (isFull()){
+            clear();
         }
     }
 

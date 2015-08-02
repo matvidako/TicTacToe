@@ -1,5 +1,6 @@
 package hr.matvidako.tictactoe;
 
+import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -38,10 +39,28 @@ public class Cell extends ImageView {
 
     public void clear() {
         occupiedBy = Player.NONE;
-        setImageResource(0);
+
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(this, View.ALPHA, 1, 0);
+        fadeOut.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                setImageResource(0);
+            }
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
+        fadeOut.start();
     }
 
     public boolean isEmpty() {
         return occupiedBy == Player.NONE;
     }
+
 }

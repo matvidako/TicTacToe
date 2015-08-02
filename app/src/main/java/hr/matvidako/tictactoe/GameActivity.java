@@ -15,7 +15,7 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        board = new Board((GridLayout) findViewById(R.id.grid), new Game());
+        board = new Board((GridLayout) findViewById(R.id.grid), new Rules());
         ButterKnife.bind(this);
     }
 
