@@ -9,13 +9,14 @@ public class Board implements View.OnClickListener {
 
     private Rules rules;
     private Player currentPlayer;
+    private OnGameOverListener onGameOverListener;
 
     private int size = 3;
     private int cellCount = size * size;
     private int moveCount = 0;
     private Cell[][] cells = new Cell[size][size];
 
-    public Board(GridLayout gridLayout, Rules rules) {
+    public Board(GridLayout gridLayout, Rules rules, OnGameOverListener onGameOverListener) {
         this.rules = rules;
         this.currentPlayer = rules.getStartingPlayer();
         this.cellCount = gridLayout.getChildCount();
@@ -52,11 +53,12 @@ public class Board implements View.OnClickListener {
             moveCount++;
             currentPlayer = rules.getNextPlayer(currentPlayer);
         }
-        if (rules.getWinner(this) != Player.NONE) {
-            clear();
-        } else if (isFull()){
-            clear();
+        if (rules.getWinner(this) != Player.NONE || isFull()) {
+            onGameOverListener.onGameOver(rules.getWinner(this));
         }
     }
 
+    public interface OnGameOverListener {
+        void onGameOver(Player winner);
+    }
 }

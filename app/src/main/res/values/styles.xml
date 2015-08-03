@@ -10,4 +10,13 @@
         <item name="android:layout_width">@dimen/size_cell</item>
         <item name="android:padding">@dimen/padding_icon</item>
     </style>
+
+    <style name="MainMenuText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Headline</item>
+    </style>
+
 </resources>

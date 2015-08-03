@@ -7,15 +7,15 @@ import android.support.v7.widget.GridLayout;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class GameActivity extends Activity {
+public class GameActivity extends Activity implements Board.OnGameOverListener {
 
     Board board;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        board = new Board((GridLayout) findViewById(R.id.grid), new Rules());
+        setContentView(R.layout.activity_game);
+        board = new Board((GridLayout) findViewById(R.id.grid), new Rules(), this);
         ButterKnife.bind(this);
     }
 
@@ -24,4 +24,8 @@ public class GameActivity extends Activity {
         board.clear();
     }
 
+    @Override
+    public void onGameOver(Player winner) {
+
+    }
 }
