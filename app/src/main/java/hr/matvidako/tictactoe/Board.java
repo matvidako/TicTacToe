@@ -20,6 +20,7 @@ public class Board implements View.OnClickListener {
         this.rules = rules;
         this.currentPlayer = rules.getStartingPlayer();
         this.cellCount = gridLayout.getChildCount();
+        this.onGameOverListener = onGameOverListener;
 
         int childIndex = 0;
         for (int row = 0; row < size; row++) {

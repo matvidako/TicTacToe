@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/score"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dim_foreground_material_dark"
+    android:padding="@dimen/padding_standard"
+    tools:showIn="@layout/activity_game">
+
+    <ImageView
+        android:id="@+id/scoreIconCross"
+        android:layout_width="@dimen/size_score_icon"
+        android:layout_height="@dimen/size_score_icon"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/cross" />
+
+    <TextSwitcher
+        android:id="@+id/scoreCross"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/padding_large"
+        android:layout_toRightOf="@id/scoreIconCross"
+        android:text="0" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/score" />
+
+    <ImageView
+        android:id="@+id/scoreIconCircle"
+        android:layout_width="@dimen/size_score_icon"
+        android:layout_height="@dimen/size_score_icon"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/circle" />
+
+    <TextSwitcher
+        android:id="@+id/scoreCircle"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/padding_large"
+        android:layout_toLeftOf="@id/scoreIconCircle"
+        android:text="0" />
+</RelativeLayout>

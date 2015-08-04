@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.GridLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grid"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_margin="@dimen/size_grid_line"
+    android:background="@drawable/grid3x3"
+    app:alignmentMode="alignBounds"
+    app:columnCount="3"
+    app:rowOrderPreserved="false"
+    tools:showIn="@layout/activity_game">
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell
+        style="@style/GridCell"
+        app:layout_columnWeight="1"
+        app:layout_gravity="fill_horizontal" />
+
+    <hr.matvidako.tictactoe.Cell style="@style/GridCell" />
+</android.support.v7.widget.GridLayout>
