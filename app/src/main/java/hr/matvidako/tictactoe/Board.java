@@ -11,7 +11,7 @@ public class Board implements View.OnClickListener {
     private Player currentPlayer;
     private OnGameOverListener onGameOverListener;
 
-    private int size = 3;
+    public int size = 3;
     private int cellCount = size * size;
     private int moveCount = 0;
     private Cell[][] cells = new Cell[size][size];
@@ -44,6 +44,10 @@ public class Board implements View.OnClickListener {
 
     public boolean isFull() {
         return moveCount >= cellCount;
+    }
+
+    public Player getPlayerAt(int row, int col) {
+        return cells[row][col].getOccupiedBy();
     }
 
     @Override
