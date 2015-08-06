@@ -12,7 +12,6 @@ import android.widget.ViewSwitcher;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class GameActivity extends Activity implements Board.OnGameOverListener {
 
@@ -49,11 +48,6 @@ public class GameActivity extends Activity implements Board.OnGameOverListener {
         scoreCircle = scoreCross = 0;
         scoreCircleTextSwitcher.setText(scoreCircle+"");
         scoreCrossTextSwitcher.setText(scoreCross+"");
-    }
-
-    @OnClick(R.id.clear)
-    public void clearGrid() {
-        board.clear();
     }
 
     @Override
