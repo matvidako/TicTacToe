@@ -46,18 +46,18 @@ public class GameActivity extends Activity implements Board.OnGameOverListener {
 
     private void resetScore() {
         scoreCircle = scoreCross = 0;
-        scoreCircleTextSwitcher.setText(scoreCircle+"");
-        scoreCrossTextSwitcher.setText(scoreCross+"");
+        scoreCircleTextSwitcher.setCurrentText(scoreCircle + "");
+        scoreCrossTextSwitcher.setCurrentText(scoreCross + "");
     }
 
     @Override
     public void onGameOver(Player winner) {
-        if(winner == Player.CIRCLE) {
+        if (winner == Player.CIRCLE) {
             scoreCircle++;
-            scoreCircleTextSwitcher.setText(scoreCircle+"");
-        } else if(winner == Player.CROSS) {
+            scoreCircleTextSwitcher.setText(scoreCircle + "");
+        } else if (winner == Player.CROSS) {
             scoreCross++;
-            scoreCrossTextSwitcher.setText(scoreCross+"");
+            scoreCrossTextSwitcher.setText(scoreCross + "");
         }
         board.clear();
     }
