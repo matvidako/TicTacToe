@@ -12,6 +12,7 @@ import android.widget.ViewSwitcher;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class GameActivity extends Activity implements Board.OnGameOverListener {
 
@@ -29,8 +30,8 @@ public class GameActivity extends Activity implements Board.OnGameOverListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        board = new Board((GridLayout) findViewById(R.id.grid), new Rules(), this);
         ButterKnife.bind(this);
+        board = new Board((GridLayout) findViewById(R.id.grid), new Rules(), this);
         layoutInflater = LayoutInflater.from(this);
 
         Animation animIn = AnimationUtils.loadAnimation(this, R.anim.score_in);
@@ -67,6 +68,12 @@ public class GameActivity extends Activity implements Board.OnGameOverListener {
         public TextView makeView() {
             return (TextView) layoutInflater.inflate(R.layout.text_view_score, null, false);
         }
+    }
+
+    @OnClick(R.id.test)
+    protected void scoreX() {
+        scoreCross++;
+        scoreCrossTextSwitcher.setText(scoreCross + "");
     }
 
 }
