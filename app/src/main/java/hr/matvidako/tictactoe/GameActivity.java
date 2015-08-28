@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayout;
 import android.view.LayoutInflater;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.RelativeLayout;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
@@ -17,10 +18,12 @@ import butterknife.OnClick;
 public class GameActivity extends Activity implements Board.OnGameOverListener {
 
     Board board;
+
     @Bind(R.id.scoreCircle)
     TextSwitcher scoreCircleTextSwitcher;
     @Bind(R.id.scoreCross)
     TextSwitcher scoreCrossTextSwitcher;
+
     LayoutInflater layoutInflater;
 
     int scoreCircle = 0;
@@ -66,7 +69,7 @@ public class GameActivity extends Activity implements Board.OnGameOverListener {
     private class ScoreViewFactory implements ViewSwitcher.ViewFactory {
         @Override
         public TextView makeView() {
-            return (TextView) layoutInflater.inflate(R.layout.text_view_score, null, false);
+            return (TextView) layoutInflater.inflate(R.layout.text_view_score, scoreCircleTextSwitcher, false);
         }
     }
 
