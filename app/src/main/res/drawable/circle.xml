@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval" >
-    <size android:height="@dimen/size_icon" android:width="@dimen/size_icon"/>
-    <stroke android:width="3dp" android:color="@color/icon_o_color"/>
-    <solid android:color="@android:color/transparent"/>
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/circle_base"/>
+</layer-list>

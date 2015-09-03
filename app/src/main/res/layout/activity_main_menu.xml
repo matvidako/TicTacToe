@@ -4,10 +4,10 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:layout_width="90dp"
-        android:layout_height="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="40dp">
 
         <ImageView
             android:layout_width="@dimen/size_icon_menu"
@@ -18,6 +18,17 @@
             android:layout_height="@dimen/size_icon_menu"
             android:layout_gravity="right"
             android:src="@drawable/cross" />
+        <ImageView
+            android:layout_width="@dimen/size_icon_menu"
+            android:layout_height="@dimen/size_icon_menu"
+            android:layout_gravity="bottom"
+            android:src="@drawable/cross" />
+
+        <ImageView
+            android:layout_width="@dimen/size_icon_menu"
+            android:layout_height="@dimen/size_icon_menu"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/circle" />
     </FrameLayout>
 
     <LinearLayout
